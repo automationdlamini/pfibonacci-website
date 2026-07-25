@@ -112,6 +112,7 @@ body {
         text-align: center;
     }
     .nav-links.active { display: flex; }
+    .hero { padding-top: 20px; }
     .hero-text-logo {
         margin-left: 0;
         margin-top: 0;
@@ -149,7 +150,7 @@ body {
     height: auto;
     margin-bottom: 20px;
     margin-left: 250px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .hero-logo {
@@ -195,9 +196,10 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     justify-content: center;
+    padding: 0 20px;
 }
 
 .service-card {
@@ -242,7 +244,6 @@ section {
 
 @media (max-width: 1024px) {
     .services-grid { 
-        grid-template-columns: repeat(2, 1fr);
         padding: 0 20px; /* Added padding to prevent edge clipping */
         gap: 15px; 
     }
@@ -250,7 +251,6 @@ section {
 
 @media (max-width: 768px) {
     .services-grid { 
-        grid-template-columns: 1fr;
         padding: 0 20px;
     }
 }
@@ -260,15 +260,49 @@ section {
     background: #333;
 }
 
+/* About Section Styling */
+#about {
+    text-align: center;
+}
+
+#about h3 {
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#more-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+#more-content.expanded {
+    max-height: 2000px;
+}
+
+#read-more-btn {
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* End About Section Styling */
+
+/* Industries Section Styling */
 #industries {
     text-align: center;
-    padding: 100px 50px;
+    padding: 100px 20px; /* Reduced side padding for mobile */
 }
 
 .industries-grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center; /* Center items horizontally */
     gap: 20px;
     max-width: 800px;
     margin: 0 auto;
@@ -283,6 +317,7 @@ section {
     color: var(--black);
     transition: background 0.3s;
     width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't increase width */
 }
 
 .industry-card:hover {
@@ -327,9 +362,27 @@ section {
     margin-bottom: 40px;
 }
 
-.contact-form {
-    max-width: 600px;
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: left;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -346,6 +399,13 @@ section {
 
 .contact-form button {
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Footer Styling */

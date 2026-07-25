@@ -18,3 +18,14 @@ document.querySelectorAll('section').forEach(section => {
     section.classList.add('hidden');
     observer.observe(section);
 });
+
+// Read More Toggle
+const readMoreBtn = document.getElementById('read-more-btn');
+const moreContent = document.getElementById('more-content');
+
+if (readMoreBtn && moreContent) {
+    readMoreBtn.addEventListener('click', () => {
+        moreContent.classList.toggle('expanded');
+        readMoreBtn.textContent = moreContent.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    });
+}
