@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
+<rect width="100%" height="100%" fill="#000000"/>
+<text x="140" y="320"
+      font-family="'Brittany Signature','Brush Script MT','Segoe Script','Snell Roundhand',cursive"
+      font-size="220"
+      fill="#FFFFFF">
+  Pfibonacci
+</text>
+</svg>
