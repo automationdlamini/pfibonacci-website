@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Computer basics for T2000/T3000 Control System Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <header class="logo-header">
+            <img src="pfibinaaci-logo.png" alt="Eskom Logo" class="logo">
+            <p class="training-subtitle">C&I Engineering Solutions</p>
+        </header>
+
+        <!-- Landing Screen -->
+        <div id="landing-screen" class="screen">
+            <h1> Computer Systems Fundamentals</h1>
+            <p class="subtitle">Modular Training quiz for computer basic for Siemens T2000 Systems.</p>
+            <button id="start-btn" class="btn primary-btn">Start Training</button>
+        </div>
+
+        <!-- Module Selection Screen -->
+        <div id="module-screen" class="screen hidden">
+            <h1>Select a Module</h1>
+            <p class="subtitle">Complete all modules to test your basic skills.</p>
+            <div id="module-grid" class="module-grid">
+                <!-- Modules injected by JS -->
+            </div>
+            <div class="overall-progress">
+                Total Training Progress: <span id="total-progress-text">0%</span>
+                <div class="progress-bar-container">
+                    <div id="total-progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span id="module-title-display">Module 1</span>
+                    <span id="question-number">Question 1 of 4</span>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="timer">
+                    <span id="timer-text">60s</span>
+                    <svg class="timer-svg" viewBox="0 0 40 40">
+                        <circle class="timer-bg" cx="20" cy="20" r="18"></circle>
+                        <circle id="timer-circle" class="timer-progress" cx="20" cy="20" r="18"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="score-display">Module Score: <span id="current-score">0</span></div>
+
+            <div id="question-container">
+                <h2 id="question-text">Question text?</h2>
+                <div id="answer-buttons" class="answer-grid"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn primary-btn hidden">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Module Results Screen -->
+        <div id="module-results-screen" class="screen hidden">
+            <h1>Module Complete!</h1>
+            <div class="final-score-container">
+                <div class="score-circle">
+                    <span id="mod-score">0</span>
+                    <span class="score-slash">/</span>
+                    <span id="mod-total">0</span>
+                </div>
+            </div>
+            <h2 id="mod-message">Good progress.</h2>
+            <div class="button-group">
+                <button id="next-module-btn" class="btn primary-btn">Next Module</button>
+                <button id="back-to-modules-btn" class="btn secondary-btn">Module Selection</button>
+            </div>
+        </div>
+
+        <!-- Final Results Screen -->
+        <div id="final-results-screen" class="screen hidden">
+            <h1>Training Complete</h1>
+            <div class="final-score-container">
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <span class="score-slash">/</span>
+                    <span id="total-questions">0</span>
+                </div>
+                <div id="percentage-text" class="percentage">0%</div>
+            </div>
+            <h2 id="result-message">Ready to start the TXP manual</h2>
+            <button id="restart-btn" class="btn secondary-btn">Restart All Training</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        software developed by Nkululeko Dlamini(0765162191)
+    </footer>
+
+    <audio id="correct-sound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="https://assets.mixkit.co/active_storage/sfx/2001/2001-preview.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
